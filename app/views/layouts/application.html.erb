@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vakilsearch</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="top-bar" data-topbar data-options="sticky_on: large">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">VakilSearch</a></h1>
+    </li>
+  </ul>
+</nav>
+
+
+<%= yield %>
+
+</body>
+</html>

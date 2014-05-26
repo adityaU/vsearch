@@ -1,0 +1,90 @@
+<div class="row search_form">
+  <form  action='/lawyers'>
+    <div class="large-3 columns">
+      <select name='city'>
+        <% if @selected_city != 'Search By Location'%>
+          <option value="<%= @selected_city %>" selected><%= @selected_city %></option>
+        <% else %>
+          <option value=""><%= @selected_city %></option>
+        <% end%>
+        <% @cities.each do |city|%>
+          <option value="<%= city %>"><%= city %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="large-3 columns">
+      <select name='service'>
+        <% if @selected_service != 'Search By Service'%>
+          <option value="<%= @selected_service %>" selected><%= @selected_service %></option>
+        <% else %>
+          <option value=""><%= @selected_service %></option>
+        <% end%>
+        
+        <% @services.each do |service|%>
+          <option value="<%= service %>"><%= service %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="large-3 columns">
+      <select name='price'>
+        <% if @selected_price_order != 'Search By Price'%>
+          <option value="<%= @selected_price_order %>" selected><%= @selected_price_order %></option>
+        <% else %>
+          <option value=""><%= @selected_price_order %></option>
+        <% end%>
+          <option value="Highest First">Highest First</option>
+          <option value="Lowest First">Lowest First</option>
+      </select>
+    </div>
+    <div class="large-3 columns">
+      <div class="row">
+        <div class="large-6 columns">
+          <button type=submit class= "button small"> Search </button>
+        </div>
+        <div class="large-6 columns">
+          <%= link_to 'clear', 'lawyers', class: "button small " %>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<% if !@search_result%>
+  <div class="featured">
+    <div class="row">
+      <label class="featured_label">Featured</label>
+
+      <div class="large-6 columns">
+        <% @featured_lawyers[0..@featured_lawyers.length/2].each do |lawyer|%>
+          <%= render :partial =>'lawyer_box', locals: {lawyer: lawyer} %>
+        <% end %>
+      </div>
+      
+      <% if @featured_lawyers[(@featured_lawyers.length/2)+1..@featured_lawyers.length] %>
+        <div class="large-6 columns">
+          <% @featured_lawyers[(@featured_lawyers.length/2)+1..@featured_lawyers.length].each do |lawyer|%>
+            <%= render :partial =>'lawyer_box', locals: {lawyer: lawyer} %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="row">
+
+  <div class="large-6 columns">
+    <% @lawyers[0..@lawyers.length/2].each do |lawyer|%>
+      <%= render :partial =>'lawyer_box', locals: {lawyer: lawyer} %>
+    <% end %>
+  </div>
+  
+  <% if @lawyers[(@lawyers.length/2)+1..@lawyers.length] %>
+    <div class="large-6 columns">
+      <% @lawyers[(@lawyers.length/2)+1..@lawyers.length].each do |lawyer|%>
+        <%= render :partial =>'lawyer_box', locals: {lawyer: lawyer} %>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

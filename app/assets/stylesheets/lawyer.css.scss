@@ -1,0 +1,54 @@
+// Place all the styles related to the lawyer controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box {
+  color: #555555;
+  padding: 1% 1% 1% 1%;
+  box-shadow: 0px 0px 1px 0px grey;
+  text-align: left;
+  margin-bottom:3px;
+  min-height: 40px;
+  vertical-align: center;
+  background: white;
+}
+
+.search_form{
+  padding-top: 40px
+}
+
+select{
+  height: 40px
+}
+
+.button{
+  height: 40px
+}
+
+.featured{
+  margin-bottom: 20px !important;
+  padding: 20px;
+  background: #333;
+}
+
+.featured_label{
+  background: rgb(14, 160, 167);
+  color: white;
+  float: left;
+  position: absolute;
+  left: 0;
+  border-radius: 0px 16px 16px 0px;
+  padding: 0% 2% 0% 1%;
+  font-weight: 800;
+  font-style: italic;
+  font-variant: small-caps;
+}
+
+.floating{
+  float: right;
+  font-variant: small-caps;
+  font-weight: bolder;
+  padding: 10% 40% 10% 40%;
+  width: 100px;
+}
+

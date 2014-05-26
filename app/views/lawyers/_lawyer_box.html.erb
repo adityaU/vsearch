@@ -1,0 +1,17 @@
+<div class="box">
+  <div class="row">
+    <div class="large-2 columns">
+      <img src="assets/no_thumb.jpg"></img>
+    </div>
+    <div class="large-8 columns">
+      <div class="lawyer_name"><%= lawyer.name %></div>
+      <div class="lawyer_city"><b>Located In:</b><%= lawyer.city %></div>
+      <div class="lawyer_service"><b>Speciality:</b><%= lawyer.service %></div>
+      <div class="lawyer_price"><b>Starting Price: </b>Rs.<%= lawyer.base_price %></div>
+    </div>
+    <div class="large-2 columns">
+      <%= link_to 'Contact Lawyer', "lawyers/#{lawyer.id}/contact", class: "button tiny floating"%>
+      <%= link_to 'Fix Appointment', "lawyers/#{lawyer.id}/appointment", class: "button tiny floating"%>
+    </div>
+  </div>
+</div>
